@@ -1,0 +1,299 @@
+{
+  "run_at": "2026-07-08T03:40:52.622018+00:00",
+  "total": 10,
+  "passed": 10,
+  "failed": 0,
+  "results": [
+    {
+      "id": "case_001",
+      "question": "英国哪些学校的硕士毕业后有利于回国落户？",
+      "expected_intent": "list_schools",
+      "actual_intent": "list_schools",
+      "expected_filters": {
+        "country": "英国",
+        "value_tag": "落户/人才政策友好"
+      },
+      "actual_filters": {
+        "country": "英国",
+        "value_tag": "落户/人才政策友好"
+      },
+      "intent_result": {
+        "intent": "list_schools",
+        "method": "rule",
+        "confidence": 0.95,
+        "reason": "命中学校列表或推荐类关键词"
+      },
+      "strategy": {
+        "retrieval_top_k": 40,
+        "context_top_k": 20,
+        "display_top_k": 5,
+        "enable_pagination": true,
+        "use_previous_results": false
+      },
+      "checks": {
+        "intent_match": true,
+        "filters_match": true
+      },
+      "passed": true
+    },
+    {
+      "id": "case_002",
+      "question": "雅思6.5，想申请英国计算机，有哪些学校适合？",
+      "expected_intent": "filter_requirement",
+      "actual_intent": "filter_requirement",
+      "expected_filters": {
+        "country": "英国",
+        "major": "计算机",
+        "ielts_max": 6.5
+      },
+      "actual_filters": {
+        "country": "英国",
+        "major": "计算机",
+        "ielts_max": 6.5
+      },
+      "intent_result": {
+        "intent": "filter_requirement",
+        "method": "rule",
+        "confidence": 0.95,
+        "reason": "命中强筛选条件类关键词"
+      },
+      "strategy": {
+        "retrieval_top_k": 30,
+        "context_top_k": 12,
+        "display_top_k": 5,
+        "enable_pagination": true,
+        "use_previous_results": false
+      },
+      "checks": {
+        "intent_match": true,
+        "filters_match": true
+      },
+      "passed": true
+    },
+    {
+      "id": "case_003",
+      "question": "预算30万以内，有哪些英国学校可以考虑？",
+      "expected_intent": "filter_requirement",
+      "actual_intent": "filter_requirement",
+      "expected_filters": {
+        "country": "英国",
+        "budget_max_rmb_wan": 30
+      },
+      "actual_filters": {
+        "country": "英国",
+        "budget_max_rmb_wan": 30
+      },
+      "intent_result": {
+        "intent": "filter_requirement",
+        "method": "rule",
+        "confidence": 0.95,
+        "reason": "命中强筛选条件类关键词"
+      },
+      "strategy": {
+        "retrieval_top_k": 30,
+        "context_top_k": 12,
+        "display_top_k": 5,
+        "enable_pagination": true,
+        "use_previous_results": false
+      },
+      "checks": {
+        "intent_match": true,
+        "filters_match": true
+      },
+      "passed": true
+    },
+    {
+      "id": "case_004",
+      "question": "介绍一下UCL",
+      "expected_intent": "school_detail",
+      "actual_intent": "school_detail",
+      "expected_filters": {},
+      "actual_filters": {},
+      "intent_result": {
+        "intent": "school_detail",
+        "method": "rule",
+        "confidence": 0.95,
+        "reason": "命中学校详情类关键词，并提到了具体学校"
+      },
+      "strategy": {
+        "retrieval_top_k": 12,
+        "context_top_k": 5,
+        "display_top_k": 5,
+        "enable_pagination": false,
+        "use_previous_results": false
+      },
+      "checks": {
+        "intent_match": true,
+        "filters_match": true
+      },
+      "passed": true
+    },
+    {
+      "id": "case_005",
+      "question": "UCL和曼大怎么选？",
+      "expected_intent": "compare_schools",
+      "actual_intent": "compare_schools",
+      "expected_filters": {},
+      "actual_filters": {},
+      "intent_result": {
+        "intent": "compare_schools",
+        "method": "rule",
+        "confidence": 0.95,
+        "reason": "命中对比或选择类关键词"
+      },
+      "strategy": {
+        "retrieval_top_k": 20,
+        "context_top_k": 8,
+        "display_top_k": 8,
+        "enable_pagination": false,
+        "use_previous_results": false
+      },
+      "checks": {
+        "intent_match": true,
+        "filters_match": true
+      },
+      "passed": true
+    },
+    {
+      "id": "case_006",
+      "question": "我成绩一般，有没有门槛低一些的学校？",
+      "expected_intent": "filter_requirement",
+      "actual_intent": "filter_requirement",
+      "expected_filters": {},
+      "actual_filters": {},
+      "intent_result": {
+        "intent": "filter_requirement",
+        "method": "rule",
+        "confidence": 0.95,
+        "reason": "命中强筛选条件类关键词"
+      },
+      "strategy": {
+        "retrieval_top_k": 30,
+        "context_top_k": 12,
+        "display_top_k": 5,
+        "enable_pagination": true,
+        "use_previous_results": false
+      },
+      "checks": {
+        "intent_match": true,
+        "filters_match": true
+      },
+      "passed": true
+    },
+    {
+      "id": "case_007",
+      "question": "我想看看英国回来办人才政策比较方便的院校",
+      "expected_intent": "list_schools",
+      "actual_intent": "list_schools",
+      "expected_filters": {
+        "country": "英国"
+      },
+      "actual_filters": {
+        "country": "英国",
+        "value_tag": "落户/人才政策友好"
+      },
+      "intent_result": {
+        "intent": "list_schools",
+        "method": "rule",
+        "confidence": 0.95,
+        "reason": "命中学校列表或推荐类关键词"
+      },
+      "strategy": {
+        "retrieval_top_k": 40,
+        "context_top_k": 20,
+        "display_top_k": 5,
+        "enable_pagination": true,
+        "use_previous_results": false
+      },
+      "checks": {
+        "intent_match": true,
+        "filters_match": true
+      },
+      "passed": true
+    },
+    {
+      "id": "case_008",
+      "question": "哪些学校不需要面试？",
+      "expected_intent": "filter_requirement",
+      "actual_intent": "filter_requirement",
+      "expected_filters": {},
+      "actual_filters": {},
+      "intent_result": {
+        "intent": "filter_requirement",
+        "method": "rule",
+        "confidence": 0.95,
+        "reason": "命中强筛选条件类关键词"
+      },
+      "strategy": {
+        "retrieval_top_k": 30,
+        "context_top_k": 12,
+        "display_top_k": 5,
+        "enable_pagination": true,
+        "use_previous_results": false
+      },
+      "checks": {
+        "intent_match": true,
+        "filters_match": true
+      },
+      "passed": true
+    },
+    {
+      "id": "case_009",
+      "question": "加拿大有哪些适合计算机方向的学校？",
+      "expected_intent": "list_schools",
+      "actual_intent": "list_schools",
+      "expected_filters": {
+        "country": "加拿大",
+        "major": "计算机"
+      },
+      "actual_filters": {
+        "country": "加拿大",
+        "major": "计算机"
+      },
+      "intent_result": {
+        "intent": "list_schools",
+        "method": "rule",
+        "confidence": 0.95,
+        "reason": "命中学校列表或推荐类关键词"
+      },
+      "strategy": {
+        "retrieval_top_k": 40,
+        "context_top_k": 20,
+        "display_top_k": 5,
+        "enable_pagination": true,
+        "use_previous_results": false
+      },
+      "checks": {
+        "intent_match": true,
+        "filters_match": true
+      },
+      "passed": true
+    },
+    {
+      "id": "case_010",
+      "question": "OpenApply资料里有没有火星大学的申请要求？",
+      "expected_intent": "school_detail",
+      "actual_intent": "school_detail",
+      "expected_filters": {},
+      "actual_filters": {},
+      "intent_result": {
+        "intent": "school_detail",
+        "method": "rule",
+        "confidence": 0.95,
+        "reason": "命中学校详情类关键词，并提到了具体学校"
+      },
+      "strategy": {
+        "retrieval_top_k": 12,
+        "context_top_k": 5,
+        "display_top_k": 5,
+        "enable_pagination": false,
+        "use_previous_results": false
+      },
+      "checks": {
+        "intent_match": true,
+        "filters_match": true
+      },
+      "passed": true
+    }
+  ]
+}

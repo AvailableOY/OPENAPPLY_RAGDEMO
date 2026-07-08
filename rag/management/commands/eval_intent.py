@@ -71,7 +71,13 @@ class Command(BaseCommand):
             self.stdout.write(f"expected_intent: {case.get('expected_intent')}")
             self.stdout.write(f"actual_intent: {intent_result['intent']}")
             self.stdout.write(f"method: {intent_result.get('method')}")
-            self.stdout.write(f"confidence: {intent_result.get('confidence')}")
+
+            if intent_result.get("method") != "rule":
+                self.stdout.write(f"confidence: {intent_result.get('confidence')}")
+
+            if intent_result.get("reason"):
+                self.stdout.write(f"reason: {intent_result.get('reason')}")
+
             self.stdout.write(f"expected_filters: {case.get('expected_filters', {})}")
             self.stdout.write(f"actual_filters: {filters}")
 
