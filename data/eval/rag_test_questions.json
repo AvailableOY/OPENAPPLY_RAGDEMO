@@ -1,0 +1,96 @@
+[
+  {
+    "id": "case_001",
+    "question": "英国哪些学校的硕士毕业后有利于回国落户？",
+    "expected_intent": "list_schools",
+    "expected_filters": {
+      "country": "英国",
+      "value_tag": "落户/人才政策友好"
+    },
+    "expected_sources_any": [
+      "OpenApply_样本院校知识库.md#UCL",
+      "OpenApply_样本院校知识库.md#University-of-Manchester",
+      "OpenApply_样本院校知识库.md#University-of-Sheffield"
+    ]
+  },
+  {
+    "id": "case_002",
+    "question": "雅思6.5，想申请英国计算机，有哪些学校适合？",
+    "expected_intent": "filter_requirement",
+    "expected_filters": {
+      "country": "英国",
+      "major": "计算机",
+      "ielts_max": 6.5
+    },
+    "expected_sources_any": [
+      "OpenApply_样本院校知识库.md#UCL",
+      "OpenApply_样本院校知识库.md#University-of-Sheffield"
+    ]
+  },
+  {
+    "id": "case_003",
+    "question": "预算30万以内，有哪些英国学校可以考虑？",
+    "expected_intent": "filter_requirement",
+    "expected_filters": {
+      "country": "英国",
+      "budget_max_rmb_wan": 30
+    },
+    "expected_sources_any": [
+      "OpenApply_样本院校知识库.md#University-of-Manchester",
+      "OpenApply_样本院校知识库.md#University-of-Sheffield",
+      "OpenApply_样本院校知识库.md#University-of-Glasgow"
+    ]
+  },
+  {
+    "id": "case_004",
+    "question": "介绍一下UCL",
+    "expected_intent": "school_detail",
+    "expected_sources_any": [
+      "OpenApply_样本院校知识库.md#UCL"
+    ]
+  },
+  {
+    "id": "case_005",
+    "question": "UCL和曼大怎么选？",
+    "expected_intent": "compare_schools",
+    "expected_sources_any": [
+      "OpenApply_样本院校知识库.md#UCL",
+      "OpenApply_样本院校知识库.md#University-of-Manchester"
+    ]
+  },
+  {
+    "id": "case_006",
+    "question": "我成绩一般，有没有门槛低一些的学校？",
+    "expected_intent": "filter_requirement"
+  },
+  {
+    "id": "case_007",
+    "question": "我想看看英国回来办人才政策比较方便的院校",
+    "expected_intent": "list_schools",
+    "expected_filters": {
+      "country": "英国"
+    }
+  },
+  {
+    "id": "case_008",
+    "question": "哪些学校不需要面试？",
+    "expected_intent": "filter_requirement"
+  },
+  {
+    "id": "case_009",
+    "question": "加拿大有哪些适合计算机方向的学校？",
+    "expected_intent": "list_schools",
+    "expected_filters": {
+      "country": "加拿大",
+      "major": "计算机"
+    },
+    "expected_sources_any": [
+      "OpenApply_样本院校知识库.md#University-of-Waterloo"
+    ]
+  },
+  {
+    "id": "case_010",
+    "question": "OpenApply资料里有没有火星大学的申请要求？",
+    "expected_intent": "school_detail"
+  }
+]
