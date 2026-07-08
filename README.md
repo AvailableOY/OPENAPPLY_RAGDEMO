@@ -89,7 +89,8 @@ OPENAPPLY_RAGDEMO/
 ├── openapply_backend/               # Django 项目配置
 ├── manage.py
 └── README.md
-环境准备
+```
+##环境准备
 建议使用 Python 3.11 或 3.12。
 安装依赖：
 pip install django chromadb sentence-transformers langchain langchain-openai python-dotenv
@@ -319,4 +320,3 @@ rerank 是轻量版本
 选择 BM25 + 向量混合检索，是因为院校资料同时包含精确实体和语义表达，混合检索比单一路径更稳。
 选择规则 + LLM 兜底做意图识别，是因为当前样本量不足以训练稳定分类模型，而规则能够覆盖高确定性场景，LLM 可以处理规则未覆盖的模糊表达。
 选择轻量 rerank，是为了在不增加重依赖的情况下提升排序可解释性，并将排序特征写入日志，方便后续分析。
-```
