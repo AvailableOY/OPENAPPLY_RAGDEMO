@@ -131,9 +131,16 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL")
 # 兼容 DashScope 等 OpenAI-compatible 服务；不配置时使用 OpenAI 默认地址。
 OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL")
-EMBEDDING_MODEL_PATH = os.getenv(
-    "EMBEDDING_MODEL_PATH",
-    r"D:\PythonModel\huggingface\bge-base-zh-v1.5",
+EMBEDDING_MODEL_ID = os.getenv(
+    "EMBEDDING_MODEL_ID",
+    "BAAI/bge-base-zh-v1.5",
+)
+
+EMBEDDING_MODEL_PATH = Path(
+    os.getenv(
+        "EMBEDDING_MODEL_PATH",
+        BASE_DIR / "models" / "bge-base-zh-v1.5",
+    )
 )
 
 RAG_DATA_DIR = BASE_DIR / "data"
@@ -146,4 +153,32 @@ RRF_CANDIDATE_TOP_K = 30
 FINAL_CONTEXT_TOP_K = 12
 ANSWER_DISPLAY_TOP_K = 5
 TASK_MEMORY_TTL_HOURS = 6
-ENABLE_RERANK = os.getenv("ENABLE_RERANK", "false").lower() == "true"
+RERANK_BACKEND = os.getenv("RERANK_BACKEND", "weighted")
+
+RERANK_API_KEY = os.getenv(
+    "RERANK_API_KEY",
+    OPENAI_API_KEY,
+)
+
+RERANK_API_URL = os.getenv(
+    "RERANK_API_URL",
+    "",
+)
+
+RERANK_MODEL = os.getenv(
+    "RERANK_MODEL",
+    "qwen3-rerank",
+)
+
+RERANK_CANDIDATE_TOP_K = int(
+    os.getenv("RERANK_CANDIDATE_TOP_K", "20")
+)
+
+RERANK_TIMEOUT_SECONDS = float(
+    os.getenv("RERANK_TIMEOUT_SECONDS", "10")
+)
+
+if RERANK_BACKEND == "qwen" and not RERANK_API_URL:
+    raise RuntimeError(
+        "RERANK_API_URL is required when RERANK_BACKEND=qwen"
+    )

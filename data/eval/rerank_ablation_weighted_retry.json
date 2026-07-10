@@ -1,0 +1,94 @@
+{
+  "run_at": "2026-07-10T11:28:56.331120+00:00",
+  "input": "data\\eval\\rag_test_questions.json",
+  "workers": 1,
+  "backends": [
+    "weighted"
+  ],
+  "case_ids": [
+    "case_001",
+    "case_003"
+  ],
+  "experiments": [
+    {
+      "backend": "weighted",
+      "summary": {
+        "total_cases": 2,
+        "labeled_cases": 2,
+        "passed_cases": 2,
+        "pass_rate": 1.0,
+        "hit_at_5": 1.0,
+        "mrr": 1.0,
+        "judge_pass_rate": 1.0,
+        "average_latency_seconds": 22.3442,
+        "fallback_count": 0,
+        "error_count": 0
+      },
+      "results": [
+        {
+          "id": "case_001",
+          "backend": "weighted",
+          "question": "英国哪些学校的硕士毕业后有利于回国落户？",
+          "query_id": 59,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield"
+          ],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Sheffield",
+            "OpenApply_样本院校知识库.md#University-of-Leeds",
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Glasgow",
+            "OpenApply_样本院校知识库.md#University-of-Surrey",
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#Durham-University",
+            "OpenApply_样本院校知识库.md#University-of-Edinburgh",
+            "OpenApply_样本院校知识库.md#University-of-Bristol",
+            "OpenApply_样本院校知识库.md#University-of-Warwick",
+            "OpenApply_样本院校知识库.md#Loughborough-University"
+          ],
+          "has_source_labels": true,
+          "hit_at_5": true,
+          "first_relevant_rank": 1,
+          "reciprocal_rank": 1.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 29.2751,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_003",
+          "backend": "weighted",
+          "question": "预算30万以内，有哪些英国学校可以考虑？",
+          "query_id": 60,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield",
+            "OpenApply_样本院校知识库.md#University-of-Glasgow"
+          ],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#University-of-Surrey",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield",
+            "OpenApply_样本院校知识库.md#Nottingham-Trent",
+            "OpenApply_样本院校知识库.md#University-of-Leicester",
+            "OpenApply_样本院校知识库.md#University-of-Glasgow",
+            "OpenApply_样本院校知识库.md#University-of-Leeds",
+            "OpenApply_样本院校知识库.md#Loughborough-University"
+          ],
+          "has_source_labels": true,
+          "hit_at_5": true,
+          "first_relevant_rank": 1,
+          "reciprocal_rank": 1.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 15.4133,
+          "passed": true,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

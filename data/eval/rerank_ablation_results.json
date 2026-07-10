@@ -1,0 +1,580 @@
+{
+  "run_at": "2026-07-10T11:20:30.607138+00:00",
+  "input": "data\\eval\\rag_test_questions.json",
+  "workers": 3,
+  "experiments": [
+    {
+      "backend": "weighted",
+      "summary": {
+        "total_cases": 10,
+        "labeled_cases": 6,
+        "passed_cases": 8,
+        "pass_rate": 0.8,
+        "hit_at_5": 0.6667,
+        "mrr": 0.6667,
+        "judge_pass_rate": 0.8,
+        "average_latency_seconds": 18.1477,
+        "fallback_count": 0,
+        "error_count": 2
+      },
+      "results": [
+        {
+          "id": "case_001",
+          "backend": "weighted",
+          "question": "英国哪些学校的硕士毕业后有利于回国落户？",
+          "query_id": null,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield"
+          ],
+          "actual_sources": [],
+          "has_source_labels": true,
+          "hit_at_5": false,
+          "first_relevant_rank": null,
+          "reciprocal_rank": 0.0,
+          "judge_pass": false,
+          "fallback_used": false,
+          "latency_seconds": 12.6933,
+          "passed": false,
+          "error": "ValueError: Could not connect to tenant default_tenant. Are you sure it exists?"
+        },
+        {
+          "id": "case_002",
+          "backend": "weighted",
+          "question": "雅思6.5，想申请英国计算机，有哪些学校适合？",
+          "query_id": 41,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield"
+          ],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield",
+            "OpenApply_样本院校知识库.md#University-of-Warwick",
+            "OpenApply_样本院校知识库.md#University-of-Glasgow",
+            "OpenApply_样本院校知识库.md#University-of-Bristol",
+            "OpenApply_样本院校知识库.md#Loughborough-University"
+          ],
+          "has_source_labels": true,
+          "hit_at_5": true,
+          "first_relevant_rank": 1,
+          "reciprocal_rank": 1.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 27.1381,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_003",
+          "backend": "weighted",
+          "question": "预算30万以内，有哪些英国学校可以考虑？",
+          "query_id": null,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield",
+            "OpenApply_样本院校知识库.md#University-of-Glasgow"
+          ],
+          "actual_sources": [],
+          "has_source_labels": true,
+          "hit_at_5": false,
+          "first_relevant_rank": null,
+          "reciprocal_rank": 0.0,
+          "judge_pass": false,
+          "fallback_used": false,
+          "latency_seconds": 12.6928,
+          "passed": false,
+          "error": "ValueError: Could not connect to tenant default_tenant. Are you sure it exists?"
+        },
+        {
+          "id": "case_004",
+          "backend": "weighted",
+          "question": "介绍一下UCL",
+          "query_id": 42,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#UCL"
+          ],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#LSE",
+            "OpenApply_样本院校知识库.md#Imperial-College-London",
+            "OpenApply_样本院校知识库.md#Durham-University",
+            "OpenApply_样本院校知识库.md#Nottingham-Trent"
+          ],
+          "has_source_labels": true,
+          "hit_at_5": true,
+          "first_relevant_rank": 1,
+          "reciprocal_rank": 1.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 16.7752,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_005",
+          "backend": "weighted",
+          "question": "UCL和曼大怎么选？",
+          "query_id": 43,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Manchester"
+          ],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#LSE",
+            "OpenApply_样本院校知识库.md#Nottingham-Trent",
+            "OpenApply_样本院校知识库.md#Durham-University",
+            "OpenApply_样本院校知识库.md#University-of-Leicester",
+            "OpenApply_样本院校知识库.md#Imperial-College-London",
+            "OpenApply_样本院校知识库.md#UBC"
+          ],
+          "has_source_labels": true,
+          "hit_at_5": true,
+          "first_relevant_rank": 1,
+          "reciprocal_rank": 1.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 24.4152,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_006",
+          "backend": "weighted",
+          "question": "我成绩一般，有没有门槛低一些的学校？",
+          "query_id": 44,
+          "expected_sources": [],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Sydney",
+            "OpenApply_样本院校知识库.md#UNSW-Sydney",
+            "OpenApply_样本院校知识库.md#University-of-Melbourne",
+            "OpenApply_样本院校知识库.md#LSE",
+            "OpenApply_样本院校知识库.md#UIUC",
+            "OpenApply_样本院校知识库.md#UBC",
+            "OpenApply_样本院校知识库.md#University-of-Toronto",
+            "OpenApply_样本院校知识库.md#Monash-University",
+            "OpenApply_样本院校知识库.md#University-of-Surrey",
+            "OpenApply_样本院校知识库.md#University-of-Queensland",
+            "OpenApply_样本院校知识库.md#NYU-Stern",
+            "OpenApply_样本院校知识库.md#University-of-Manchester"
+          ],
+          "has_source_labels": false,
+          "hit_at_5": null,
+          "first_relevant_rank": null,
+          "reciprocal_rank": 0.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 19.696,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_007",
+          "backend": "weighted",
+          "question": "我想看看英国回来办人才政策比较方便的院校",
+          "query_id": 45,
+          "expected_sources": [],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Leeds",
+            "OpenApply_样本院校知识库.md#Durham-University",
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Warwick",
+            "OpenApply_样本院校知识库.md#University-of-Surrey",
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield",
+            "OpenApply_样本院校知识库.md#University-of-Edinburgh",
+            "OpenApply_样本院校知识库.md#University-of-Bristol",
+            "OpenApply_样本院校知识库.md#University-of-Glasgow",
+            "OpenApply_样本院校知识库.md#Loughborough-University"
+          ],
+          "has_source_labels": false,
+          "hit_at_5": null,
+          "first_relevant_rank": null,
+          "reciprocal_rank": 0.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 18.017,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_008",
+          "backend": "weighted",
+          "question": "哪些学校不需要面试？",
+          "query_id": 47,
+          "expected_sources": [],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Oxford",
+            "OpenApply_样本院校知识库.md#UBC",
+            "OpenApply_样本院校知识库.md#MIT",
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#LSE",
+            "OpenApply_样本院校知识库.md#Boston-University",
+            "OpenApply_样本院校知识库.md#Harvard-University",
+            "OpenApply_样本院校知识库.md#University-of-Surrey",
+            "OpenApply_样本院校知识库.md#Nottingham-Trent",
+            "OpenApply_样本院校知识库.md#University-of-Leeds",
+            "OpenApply_样本院校知识库.md#University-of-Cambridge",
+            "OpenApply_样本院校知识库.md#Monash-University"
+          ],
+          "has_source_labels": false,
+          "hit_at_5": null,
+          "first_relevant_rank": null,
+          "reciprocal_rank": 0.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 21.8496,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_009",
+          "backend": "weighted",
+          "question": "加拿大有哪些适合计算机方向的学校？",
+          "query_id": 48,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Waterloo"
+          ],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Waterloo",
+            "OpenApply_样本院校知识库.md#University-of-Toronto",
+            "OpenApply_样本院校知识库.md#UBC",
+            "OpenApply_样本院校知识库.md#McMaster-University"
+          ],
+          "has_source_labels": true,
+          "hit_at_5": true,
+          "first_relevant_rank": 1,
+          "reciprocal_rank": 1.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 17.1721,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_010",
+          "backend": "weighted",
+          "question": "OpenApply资料里有没有火星大学的申请要求？",
+          "query_id": 46,
+          "expected_sources": [],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Waterloo",
+            "OpenApply_样本院校知识库.md#UIUC",
+            "OpenApply_样本院校知识库.md#McMaster-University",
+            "OpenApply_样本院校知识库.md#University-of-Toronto",
+            "OpenApply_样本院校知识库.md#Monash-University"
+          ],
+          "has_source_labels": false,
+          "hit_at_5": null,
+          "first_relevant_rank": null,
+          "reciprocal_rank": 0.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 11.0273,
+          "passed": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "backend": "qwen",
+      "summary": {
+        "total_cases": 10,
+        "labeled_cases": 6,
+        "passed_cases": 9,
+        "pass_rate": 0.9,
+        "hit_at_5": 0.8333,
+        "mrr": 0.7738,
+        "judge_pass_rate": 1.0,
+        "average_latency_seconds": 22.17,
+        "fallback_count": 0,
+        "error_count": 0
+      },
+      "results": [
+        {
+          "id": "case_001",
+          "backend": "qwen",
+          "question": "英国哪些学校的硕士毕业后有利于回国落户？",
+          "query_id": 51,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield"
+          ],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#Loughborough-University",
+            "OpenApply_样本院校知识库.md#University-of-Edinburgh",
+            "OpenApply_样本院校知识库.md#University-of-Glasgow",
+            "OpenApply_样本院校知识库.md#Durham-University",
+            "OpenApply_样本院校知识库.md#University-of-Leeds",
+            "OpenApply_样本院校知识库.md#University-of-Surrey",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield",
+            "OpenApply_样本院校知识库.md#University-of-Bristol",
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Warwick"
+          ],
+          "has_source_labels": true,
+          "hit_at_5": false,
+          "first_relevant_rank": 7,
+          "reciprocal_rank": 0.1429,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 22.3593,
+          "passed": false,
+          "error": null
+        },
+        {
+          "id": "case_002",
+          "backend": "qwen",
+          "question": "雅思6.5，想申请英国计算机，有哪些学校适合？",
+          "query_id": 50,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield"
+          ],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield",
+            "OpenApply_样本院校知识库.md#University-of-Bristol",
+            "OpenApply_样本院校知识库.md#University-of-Glasgow",
+            "OpenApply_样本院校知识库.md#Loughborough-University",
+            "OpenApply_样本院校知识库.md#University-of-Warwick"
+          ],
+          "has_source_labels": true,
+          "hit_at_5": true,
+          "first_relevant_rank": 1,
+          "reciprocal_rank": 1.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 21.8783,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_003",
+          "backend": "qwen",
+          "question": "预算30万以内，有哪些英国学校可以考虑？",
+          "query_id": 49,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield",
+            "OpenApply_样本院校知识库.md#University-of-Glasgow"
+          ],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#Loughborough-University",
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#University-of-Surrey",
+            "OpenApply_样本院校知识库.md#University-of-Leicester",
+            "OpenApply_样本院校知识库.md#University-of-Glasgow",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield",
+            "OpenApply_样本院校知识库.md#University-of-Leeds",
+            "OpenApply_样本院校知识库.md#Nottingham-Trent"
+          ],
+          "has_source_labels": true,
+          "hit_at_5": true,
+          "first_relevant_rank": 2,
+          "reciprocal_rank": 0.5,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 21.5211,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_004",
+          "backend": "qwen",
+          "question": "介绍一下UCL",
+          "query_id": 53,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#UCL"
+          ],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#Imperial-College-London",
+            "OpenApply_样本院校知识库.md#LSE",
+            "OpenApply_样本院校知识库.md#Loughborough-University",
+            "OpenApply_样本院校知识库.md#Nottingham-Trent"
+          ],
+          "has_source_labels": true,
+          "hit_at_5": true,
+          "first_relevant_rank": 1,
+          "reciprocal_rank": 1.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 25.2508,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_005",
+          "backend": "qwen",
+          "question": "UCL和曼大怎么选？",
+          "query_id": 54,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Manchester"
+          ],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#University-of-Oxford",
+            "OpenApply_样本院校知识库.md#University-of-Leicester",
+            "OpenApply_样本院校知识库.md#LSE",
+            "OpenApply_样本院校知识库.md#Nottingham-Trent",
+            "OpenApply_样本院校知识库.md#Durham-University",
+            "OpenApply_样本院校知识库.md#Imperial-College-London"
+          ],
+          "has_source_labels": true,
+          "hit_at_5": true,
+          "first_relevant_rank": 1,
+          "reciprocal_rank": 1.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 26.2583,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_006",
+          "backend": "qwen",
+          "question": "我成绩一般，有没有门槛低一些的学校？",
+          "query_id": 52,
+          "expected_sources": [],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#Penn-State",
+            "OpenApply_样本院校知识库.md#University-of-Leicester",
+            "OpenApply_样本院校知识库.md#UNSW-Sydney",
+            "OpenApply_样本院校知识库.md#Nottingham-Trent",
+            "OpenApply_样本院校知识库.md#University-of-Surrey",
+            "OpenApply_样本院校知识库.md#University-of-Queensland",
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#University-of-Melbourne",
+            "OpenApply_样本院校知识库.md#Boston-University",
+            "OpenApply_样本院校知识库.md#University-of-Sydney",
+            "OpenApply_样本院校知识库.md#University-of-Leeds",
+            "OpenApply_样本院校知识库.md#University-of-Pittsburgh"
+          ],
+          "has_source_labels": false,
+          "hit_at_5": null,
+          "first_relevant_rank": null,
+          "reciprocal_rank": 0.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 23.4045,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_007",
+          "backend": "qwen",
+          "question": "我想看看英国回来办人才政策比较方便的院校",
+          "query_id": 55,
+          "expected_sources": [],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Edinburgh",
+            "OpenApply_样本院校知识库.md#Durham-University",
+            "OpenApply_样本院校知识库.md#Loughborough-University",
+            "OpenApply_样本院校知识库.md#University-of-Surrey",
+            "OpenApply_样本院校知识库.md#University-of-Manchester",
+            "OpenApply_样本院校知识库.md#University-of-Bristol",
+            "OpenApply_样本院校知识库.md#University-of-Sheffield",
+            "OpenApply_样本院校知识库.md#University-of-Glasgow",
+            "OpenApply_样本院校知识库.md#University-of-Leeds",
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#University-of-Warwick"
+          ],
+          "has_source_labels": false,
+          "hit_at_5": null,
+          "first_relevant_rank": null,
+          "reciprocal_rank": 0.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 21.6749,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_008",
+          "backend": "qwen",
+          "question": "哪些学校不需要面试？",
+          "query_id": 56,
+          "expected_sources": [],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Cambridge",
+            "OpenApply_样本院校知识库.md#University-of-Warwick",
+            "OpenApply_样本院校知识库.md#Loughborough-University",
+            "OpenApply_样本院校知识库.md#Nottingham-Trent",
+            "OpenApply_样本院校知识库.md#Boston-University",
+            "OpenApply_样本院校知识库.md#UCL",
+            "OpenApply_样本院校知识库.md#Monash-University",
+            "OpenApply_样本院校知识库.md#University-of-Oxford",
+            "OpenApply_样本院校知识库.md#Rutgers-University",
+            "OpenApply_样本院校知识库.md#Imperial-College-London",
+            "OpenApply_样本院校知识库.md#Durham-University",
+            "OpenApply_样本院校知识库.md#Harvard-University"
+          ],
+          "has_source_labels": false,
+          "hit_at_5": null,
+          "first_relevant_rank": null,
+          "reciprocal_rank": 0.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 21.9968,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_009",
+          "backend": "qwen",
+          "question": "加拿大有哪些适合计算机方向的学校？",
+          "query_id": 57,
+          "expected_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Waterloo"
+          ],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Waterloo",
+            "OpenApply_样本院校知识库.md#UBC",
+            "OpenApply_样本院校知识库.md#University-of-Toronto",
+            "OpenApply_样本院校知识库.md#McMaster-University"
+          ],
+          "has_source_labels": true,
+          "hit_at_5": true,
+          "first_relevant_rank": 1,
+          "reciprocal_rank": 1.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 25.4657,
+          "passed": true,
+          "error": null
+        },
+        {
+          "id": "case_010",
+          "backend": "qwen",
+          "question": "OpenApply资料里有没有火星大学的申请要求？",
+          "query_id": 58,
+          "expected_sources": [],
+          "actual_sources": [
+            "OpenApply_样本院校知识库.md#University-of-Oxford",
+            "OpenApply_样本院校知识库.md#UIUC",
+            "OpenApply_样本院校知识库.md#UNSW-Sydney",
+            "OpenApply_样本院校知识库.md#McMaster-University",
+            "OpenApply_样本院校知识库.md#University-of-Melbourne"
+          ],
+          "has_source_labels": false,
+          "hit_at_5": null,
+          "first_relevant_rank": null,
+          "reciprocal_rank": 0.0,
+          "judge_pass": true,
+          "fallback_used": false,
+          "latency_seconds": 11.8901,
+          "passed": true,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

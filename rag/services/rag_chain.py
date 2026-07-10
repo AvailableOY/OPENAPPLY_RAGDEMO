@@ -18,7 +18,7 @@ from rag.services.logging_service import (
 from rag.services.memory import get_task_memory, merge_task_memory, save_task_memory
 from rag.services.prompts import format_contexts
 from rag.services.query_filters import extract_query_filters
-from rag.services.reranker import rerank
+from rag.services.rerankers import rerank
 from rag.services.result_filters import apply_metadata_filters
 from rag.services.retrieval_strategy import build_retrieval_strategy
 
@@ -49,6 +49,7 @@ def build_candidate_log_item(item):
         "rerank_score": item.get("rerank_score"),
         "rank_sources": item.get("rank_sources", {}),
         "rerank_features": item.get("rerank_features", {}),
+        "rerank_backend": item.get("rerank_backend"),
     }
 
 
@@ -71,7 +72,9 @@ def save_pipeline_logs(state):
             "vector_top_k": getattr(settings, "VECTOR_TOP_K", 20),
             "rrf_k": getattr(settings, "RRF_K", 60),
             "final_context_top_k": getattr(settings, "FINAL_CONTEXT_TOP_K", 5),
-            "enable_rerank": getattr(settings, "ENABLE_RERANK", False),
+            "rerank_backend": settings.RERANK_BACKEND,
+            "rerank_model": settings.RERANK_MODEL,
+            "rerank_candidate_top_k": settings.RERANK_CANDIDATE_TOP_K,
             "attempts": state.get("attempt", 1),
             "retrieval_candidate_top_k": getattr(settings, "RRF_CANDIDATE_TOP_K", 30),
             "answer_display_top_k": getattr(settings, "ANSWER_DISPLAY_TOP_K", 5),
@@ -178,8 +181,13 @@ def run_rag_query(question, session_id="demo-session"):
         )
         candidates = apply_metadata_filters(candidates, filters)
 
+        rerank_query = (
+            f"用户原始问题：{state['question']}\n"
+            f"检索改写：{state['rewritten_query']}"
+        )
+
         reranked_candidates = rerank(
-            query=state["rewritten_query"],
+            query=rerank_query,
             candidates=candidates,
             top_k=len(candidates),
         )
