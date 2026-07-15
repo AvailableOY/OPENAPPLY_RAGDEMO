@@ -44,12 +44,15 @@
 ## 安装依赖
 
 建议使用 Python 3.11 或 Python 3.12。
+migrate 用于创建查询日志、召回记录和会话数据表，首次运行项目时执行一次即可。
 
 在项目根目录执行：
 
 ```bash
 python -m pip install -r requirements.txt
+python manage.py migrate
 ```
+
 ## Embedding 模型
 
 项目默认使用：
